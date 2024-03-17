@@ -1,4 +1,4 @@
-#N canvas 330 -961 1263 771 12;
+#N canvas 329 -975 1264 772 12;
 #X obj 315 17 r notesIn-\$1;
 #X obj 36 17 inlet~ inL-\$1;
 #X obj 146 17 inlet~ inR-\$1;
@@ -7,10 +7,13 @@
 #X obj 584 41 r fsIn-\$1;
 #X obj 702 16 r ctrlIn-\$1;
 #X obj 702 42 s ctrlOut-\$1;
-#X obj 370 150 s notesOut-\$1;
-#X obj 60 160 outlet~ outL-\$1;
-#X obj 199 160 outlet~ outR-\$1;
+#X obj 350 620 s notesOut-\$1;
+#X obj 40 630 outlet~ outL-\$1;
+#X obj 179 630 outlet~ outR-\$1;
 #X obj 890 30 r arp_select-\$1;
 #X obj 890 110 r global-bpm;
 #X obj 890 70 r beat-clock;
+#X obj 524 569 stripnote;
+#X obj 360 210 note-tracker airport-notes-\$1;
 #X connect 0 0 8 0;
+#X connect 0 0 15 0;
