@@ -59,7 +59,7 @@
 #X obj 60 175 select 0;
 #X obj 60 200 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#N canvas 361 134 799 645 synth 0;
+#N canvas 360 133 801 647 synth 1;
 #X text 50 50 Just make a sound;
 #X obj 76 312 unpack f f;
 #X obj 76 407 osc~;
@@ -86,12 +86,7 @@
 #X obj 540 450 *~;
 #X obj 581 411 / 127;
 #X obj 540 372 mtof;
-#X obj 100 340 print ONE;
-#X obj 570 340 print FOUR;
-#X obj 400 340 print THREE;
-#X obj 260 340 print TWO;
 #X connect 1 0 5 0;
-#X connect 1 0 26 0;
 #X connect 1 1 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 6 0;
@@ -108,7 +103,6 @@
 #X connect 10 1 8 1;
 #X connect 10 2 8 2;
 #X connect 11 0 15 0;
-#X connect 11 0 29 0;
 #X connect 11 1 14 0;
 #X connect 12 0 13 0;
 #X connect 13 0 6 0;
@@ -116,7 +110,6 @@
 #X connect 14 0 13 1;
 #X connect 15 0 12 0;
 #X connect 16 0 20 0;
-#X connect 16 0 28 0;
 #X connect 16 1 19 0;
 #X connect 17 0 18 0;
 #X connect 18 0 6 0;
@@ -124,7 +117,6 @@
 #X connect 19 0 18 1;
 #X connect 20 0 17 0;
 #X connect 21 0 25 0;
-#X connect 21 0 27 0;
 #X connect 21 1 24 0;
 #X connect 22 0 23 0;
 #X connect 23 0 6 0;
