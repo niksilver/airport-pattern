@@ -1,4 +1,4 @@
-#N canvas 71 -1026 1285 774 10;
+#N canvas 120 -1039 1285 774 10;
 #X obj 40 30 loadbang;
 #X obj 40 55 s init;
 #X obj 420 40 v global-bpm;
@@ -131,9 +131,9 @@
 #X connect 23 0 6 1;
 #X connect 24 0 23 1;
 #X connect 25 0 22 0;
-#X restore 650 448 pd synth;
+#X restore 650 488 pd synth;
 #X text 540 200 midi note \, vel \, duration (ms);
-#N canvas 764 -959 1012 817 play-two-notes 1;
+#N canvas 844 -959 1012 817 play-two-notes 0;
 #X obj 50 15 inlet;
 #X obj 220 15 inlet;
 #X obj 193 280 delay;
@@ -170,8 +170,8 @@
 #X obj 400 160 t b b b;
 #X obj 400 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X text 700 320 sends to notesOut-\$1;
-#X obj 650 410 r notesOut-1;
+#X text 700 330 sends to notesOut-\$1;
+#X obj 650 450 r notesOut-1;
 #X text 490 245 sends to notesIn-1;
 #X text 988 200 midi note \, vel \, duration (ms);
 #N canvas 636 236 738 574 play-two-notes 0;
@@ -231,10 +231,12 @@
 #X msg 910 200 59 30 1000;
 #X obj 620 80 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X text 650 350 sends to notesOut-\$1;
-#X obj 590 320 airport-module 1;
-#X obj 590 350 module 2;
-#X text 590 290 Only the module numbered 1 is used;
+#X text 650 390 sends to notesOut-\$1;
+#X obj 590 330 airport-module 1;
+#X obj 590 390 module 2;
+#X text 590 300 Only the module numbered 1 is used;
+#X text 701 359 sends to notesOut-\$1;
+#X obj 591 359 thru-module 2;
 #X connect 0 0 1 0;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
