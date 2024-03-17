@@ -1,9 +1,9 @@
-#N canvas 120 -1039 1285 774 10;
+#N canvas 174 -1146 1285 799 10;
 #X obj 40 30 loadbang;
 #X obj 40 55 s init;
 #X obj 420 40 v global-bpm;
 #X obj 420 65 v beat-clock;
-#N canvas 564 108 814 715 run-clocks 0;
+#N canvas 564 108 814 716 run-clocks 1;
 #X text 10 44 beat clock 0 to 359;
 #X text 290 44 Set global bpm;
 #X text 460 84 beat_interval_s = 1 / beats_per_s;
@@ -22,12 +22,12 @@
 #X obj 90 254 metro 1000;
 #X obj 24 182 metro 1000;
 #X obj 90 362 f 0;
-#X obj 140 364 + 1;
-#X obj 90 387 % 360;
-#X floatatom 181 412 5 0 0 0 - - -, f 5;
+#X obj 144 373 + 1;
+#X obj 90 390 % 360;
+#X floatatom 181 442 5 0 0 0 - - -, f 5;
 #X obj 147 220 / 360;
 #X floatatom 170 254 10 0 0 0 - - -, f 10;
-#X obj 90 412 s beat-clock;
+#X obj 90 442 s beat-clock;
 #X obj 110 284 r init;
 #X obj 110 309 f 0;
 #X obj 90 214 r init;
@@ -40,11 +40,11 @@
 #X connect 12 1 19 0;
 #X connect 13 0 15 0;
 #X connect 14 0 11 0;
-#X connect 15 0 16 0;
 #X connect 15 0 17 0;
 #X connect 16 0 15 1;
-#X connect 17 0 18 0;
+#X connect 17 0 16 0;
 #X connect 17 0 21 0;
+#X connect 17 0 18 0;
 #X connect 19 0 13 1;
 #X connect 19 0 20 0;
 #X connect 22 0 23 0;
@@ -59,7 +59,7 @@
 #X obj 60 175 select 0;
 #X obj 60 200 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#N canvas 360 133 801 647 synth 1;
+#N canvas 360 133 801 647 synth 0;
 #X text 50 50 Just make a sound;
 #X obj 76 312 unpack f f;
 #X obj 76 407 osc~;
