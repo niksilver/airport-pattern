@@ -1,0 +1,49 @@
+#N canvas 749 -839 1054 636 10;
+#X obj 510 70 text define \$1;
+#X text 510 97 \$1 is the text store name;
+#X text 510 120 Text stores pitch \, velocity \, note duration \, tape
+duration. The line number is which tape reel it's on (starts from 0).
+;
+#X text 510 160 Note on writes an entry with dummy tape duration -99
+A tick of the beat clock updates the note duration.;
+#X obj 110 50 inlet;
+#X text 160 50 Pitch and velocity pair;
+#X obj 110 75 t a a;
+#X obj 167 242 list store;
+#X obj 50 380 list store;
+#X obj 70 120 unpack f f;
+#X obj 93 153 sel 0;
+#X text 510 250 With thanks to Critter & Guitari's cg-note-tracker
+\, which can be found in the Pink Mode pattern.;
+#X obj 167 211 t b;
+#X obj 167 332 text insert \$1 1e+09;
+#X obj 169 114 t a a a;
+#N canvas 901 -995 723 466 delete-entry 1;
+#X obj 70 30 inlet;
+#X text 120 30 Pitch and velocity pair;
+#X obj 70 55 unpack f f;
+#X obj 70 80 text search \$1;
+#X obj 70 179 text delete \$1;
+#X obj 70 109 select -1;
+#X text 210 80 Given a pitch/velocity pair \, delete the line with
+that pitch.;
+#X text 120 144 Only delete if we have found a line;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 5 1 4 0;
+#X restore 176 300 pd delete-entry;
+#X obj 167 267 t a a;
+#X text 241 242 Store the note pair in case it's note on;
+#X text 130 379 Store the note pair in case it's note off;
+#X connect 4 0 6 0;
+#X connect 6 0 9 0;
+#X connect 6 1 14 0;
+#X connect 7 0 16 0;
+#X connect 9 1 10 0;
+#X connect 10 1 12 0;
+#X connect 12 0 7 0;
+#X connect 14 0 8 1;
+#X connect 14 1 7 1;
+#X connect 16 0 13 0;
+#X connect 16 1 15 0;
