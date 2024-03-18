@@ -1,9 +1,9 @@
-#N canvas 174 -1146 1285 799 10;
+#N canvas 45 -1046 1285 800 10;
 #X obj 40 30 loadbang;
 #X obj 40 55 s init;
 #X obj 420 40 v global-bpm;
 #X obj 420 65 v beat-clock;
-#N canvas 564 108 814 716 run-clocks 1;
+#N canvas 564 108 814 717 run-clocks 0;
 #X text 10 44 beat clock 0 to 359;
 #X text 290 44 Set global bpm;
 #X text 460 84 beat_interval_s = 1 / beats_per_s;
@@ -53,8 +53,8 @@
 #X connect 25 0 14 0;
 #X connect 26 0 7 0;
 #X restore 320 40 pd run-clocks;
-#X floatatom 110 33 5 1 270 0 - - -, f 5;
-#X obj 110 60 s global-bpm;
+#X floatatom 110 85 5 1 270 0 - - -, f 5;
+#X obj 110 112 s global-bpm;
 #X obj 60 150 r beat-clock;
 #X obj 60 175 select 0;
 #X obj 60 200 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -125,7 +125,7 @@
 #X connect 25 0 22 0;
 #X restore 650 488 pd synth;
 #X text 540 200 midi note \, vel \, duration (ms);
-#N canvas 844 -959 1012 817 play-two-notes 0;
+#N canvas 844 0 1012 817 play-two-notes 0;
 #X obj 50 15 inlet;
 #X obj 220 15 inlet;
 #X obj 193 280 delay;
@@ -229,6 +229,8 @@
 #X text 590 300 Only the module numbered 1 is used;
 #X text 701 359 sends to notesOut-\$1;
 #X obj 591 359 thru-module 2;
+#X obj 110 30 r init;
+#X obj 110 57 f 60;
 #X connect 0 0 1 0;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
@@ -250,3 +252,5 @@
 #X connect 28 0 22 2;
 #X connect 29 0 17 0;
 #X connect 29 0 25 0;
+#X connect 36 0 37 0;
+#X connect 37 0 5 0;
