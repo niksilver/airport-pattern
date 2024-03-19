@@ -1,4 +1,4 @@
-#N canvas 514 -992 1184 861 10;
+#N canvas 640 -959 1184 886 10;
 #X obj 510 70 text define \$1;
 #X text 510 97 \$1 is the text store name;
 #X obj 110 50 inlet;
@@ -89,52 +89,52 @@ and tape number has dummy value -1;
 #X obj 660 590 find-line \$1;
 #X obj 50 495 t a a;
 #N canvas 491 -1086 1156 914 get-next-tape-num 1;
-#X obj 70 50 inlet;
-#X text 420 50 \$1 is the text store name;
-#X text 120 50 Bang;
-#X obj 77 247 f 0;
-#X obj 57 214 until;
-#X obj 130 250 + 1;
-#X obj 30 30 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 80 50 inlet;
+#X text 430 50 \$1 is the text store name;
+#X text 130 50 Bang;
+#X obj 87 247 f 0;
+#X obj 67 214 until;
+#X obj 140 250 + 1;
+#X obj 40 30 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 78 420 f;
-#X text 138 420 The value we searched for;
-#X obj 78 370 select -1;
-#X obj 78 395 t b;
-#X text 128 390 We didn't find it \, so output it;
-#X obj 63 496 f;
-#X obj 630 435 text insert mytest;
-#X obj 630 220 text define mytest;
-#X text 130 180 Initial values \, incl -1 if not found;
-#X obj 70 180 t 6 0 -1;
-#X obj 43 107 t b b;
-#X text 93 496 Save up a value \, output it at the end;
-#X obj 77 276 t f f;
-#X msg 630 384 list 0 0 0 0 5 \, list 0 0 0 0 2 \, list 0 0 0 0 1 \,
+#X obj 88 420 f;
+#X text 148 420 The value we searched for;
+#X obj 88 370 select -1;
+#X obj 88 395 t b;
+#X text 138 390 We didn't find it \, so output it;
+#X obj 73 496 f;
+#X obj 510 435 text insert mytest;
+#X obj 510 220 text define mytest;
+#X text 140 180 Initial values \, incl -1 if not found;
+#X obj 80 180 t 6 0 -1;
+#X obj 53 107 t b b;
+#X text 103 496 Save up a value \, output it at the end;
+#X obj 87 276 t f f;
+#X msg 510 384 list 0 0 0 0 5 \, list 0 0 0 0 2 \, list 0 0 0 0 1 \,
 list 0 0 0 0 4 \, list 0 0 0 0 0 \, list 0 0 0 0 3;
-#X text 630 190 Data for testing;
-#X obj 630 551 text insert mytest;
-#X msg 630 500 list 0 0 0 0 5 \, list 0 0 0 0 2 \, list 0 0 0 0 1 \,
+#X text 510 190 Data for testing;
+#X obj 510 551 text insert mytest;
+#X msg 510 500 list 0 0 0 0 5 \, list 0 0 0 0 2 \, list 0 0 0 0 1 \,
 list 0 0 0 0 4 \, list 0 0 0 0 0 \, list 0 0 0 0 3;
-#X text 630 476 Text with everything present \, should emit -1;
-#X text 630 360 Text with a 3 missing \, should emit 3;
-#X obj 630 671 text insert mytest;
-#X text 630 596 Text with a 3 and a 4 missing \, should emit only one
+#X text 510 476 Text with everything present \, should emit -1;
+#X text 510 360 Text with a 3 missing \, should emit 3;
+#X obj 510 671 text insert mytest;
+#X text 510 596 Text with a 3 and a 4 missing \, should emit only one
 of these;
-#X msg 630 620 list 0 0 0 0 5 \, list 0 0 0 0 2 \, list 0 0 0 0 1 \,
+#X msg 510 620 list 0 0 0 0 5 \, list 0 0 0 0 2 \, list 0 0 0 0 1 \,
 list 0 0 0 0 0;
-#X obj 630 317 text delete mytest;
-#X msg 630 293 -1;
-#X text 630 267 Clear the text;
-#X obj 63 521 outlet;
-#X text 128 320 Change to \$1 for real \, mytest for testing;
-#X text 420 90 Output number of the next tape to be used. The logic
+#X obj 510 317 text delete mytest;
+#X msg 510 293 -1;
+#X text 510 267 Clear the text;
+#X obj 73 521 outlet;
+#X text 138 320 Change to \$1 for real \, mytest for testing;
+#X text 430 90 Output number of the next tape to be used. The logic
 is to search for each tape number \, and store any not found \, and
 finally output whatever was last stored.;
-#X obj 78 345 text search \$1 4;
-#X obj 390 270 t a;
-#X obj 390 415 t a;
-#X obj 13 392 t a;
+#X obj 88 345 text search \$1 4;
+#X obj 400 270 t a;
+#X obj 400 415 t a;
+#X obj 23 392 t a;
 #X connect 0 0 17 0;
 #X connect 3 0 5 0;
 #X connect 3 0 19 0;
