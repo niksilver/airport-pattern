@@ -1,3 +1,9 @@
+To do
+
 - Have a maximum number of notes in the note tracker.
 - Add tape length on a note off.
 - Run tapes with notes.
+- Stop a tape when we get a note on for the same note.
+- Stop a tape and delete the entry when we have a 7th note.
+
+Done
