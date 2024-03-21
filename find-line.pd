@@ -1,4 +1,4 @@
-#N canvas 536 306 506 396 10;
+#N canvas 536 305 581 397 10;
 #X obj 50 40 inlet;
 #X text 100 40 Pitch and velocity pair;
 #X obj 50 65 unpack f f;
