@@ -1,9 +1,9 @@
-#N canvas 9 45 1286 801 10;
+#N canvas -32 60 1287 802 10;
 #X obj 40 30 loadbang;
 #X obj 40 55 s init;
 #X obj 420 40 v global-bpm;
 #X obj 420 65 v beat-clock;
-#N canvas 564 108 814 717 run-clocks 0;
+#N canvas 564 108 814 718 run-clocks 0;
 #X text 10 44 beat clock 0 to 359;
 #X text 290 44 Set global bpm;
 #X text 460 84 beat_interval_s = 1 / beats_per_s;
