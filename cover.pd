@@ -165,7 +165,7 @@
 #X text 700 420 sends to notesOut-\$1;
 #X obj 650 540 r notesOut-1;
 #X text 490 245 sends to notesIn-1;
-#X obj 848 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 780 162 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 620 80 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -177,14 +177,12 @@
 #X obj 591 449 thru-module 2;
 #X obj 110 30 r init;
 #X obj 110 57 f 60;
-#X text 858 220 wait (ms) \, midi note \, vel;
+#X text 820 180 wait (ms) \, midi note \, vel;
 #X obj 780 285 s notesIn-1;
-#X obj 860 200 text define -k seq2;
+#X obj 820 160 text define -k seq2;
 #A set 0 73 100 \; 500 73 0 \; 1000 71 60 \; 1000 71 0 \;;
-#X msg 800 200 line 0;
-#X msg 760 200 auto;
-#X obj 793 163 t b b;
 #X obj 780 250 text sequence seq2 -w 1;
+#X msg 780 220 line 0 \, auto;
 #X connect 0 0 1 0;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
@@ -197,13 +195,10 @@
 #X connect 16 2 15 0;
 #X connect 17 0 16 0;
 #X connect 19 0 10 0;
-#X connect 21 0 36 0;
+#X connect 21 0 35 0;
 #X connect 22 0 17 0;
 #X connect 22 0 21 0;
 #X connect 29 0 30 0;
 #X connect 30 0 5 0;
-#X connect 34 0 37 0;
-#X connect 35 0 37 0;
-#X connect 36 0 35 0;
-#X connect 36 1 34 0;
-#X connect 37 0 32 0;
+#X connect 34 0 32 0;
+#X connect 35 0 34 0;
