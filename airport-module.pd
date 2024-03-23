@@ -1,4 +1,4 @@
-#N canvas 307 -1035 1264 848 12;
+#N canvas 45 20 1267 876 12;
 #X obj 315 17 r notesIn-\$1;
 #X obj 36 17 inlet~ inL-\$1;
 #X obj 146 17 inlet~ inR-\$1;
@@ -14,7 +14,7 @@
 #X obj 890 110 r global-bpm;
 #X obj 890 70 r beat-clock;
 #X obj 360 210 note-tracker airport-notes-\$1;
-#N canvas 234 -1050 1522 914 set-up-tape 1;
+#N canvas 94 61 926 915 set-up-tape 1;
 #X text 100 30 Pitch \, velocity \, note duration \, tape duration
 \, tape number (starts from 0).;
 #X obj 30 30 inlet;
@@ -68,7 +68,7 @@
 #X text 710 310 Use for testing;
 #X obj 260 270 r tape-\$0-5-X;
 #X obj 620 270 r tape-\$0-5-stop-X;
-#X msg 60 130 symbol tape-\$5-\$0;
+#X msg 60 130 symbol tape-\$0-\$5;
 #X connect 1 0 32 0;
 #X connect 3 0 19 0;
 #X connect 4 0 5 0;
@@ -111,6 +111,7 @@
 #X connect 48 0 41 0;
 #X connect 49 0 43 0;
 #X connect 50 0 2 1;
+#X connect 50 0 33 0;
 #X restore 360 240 pd set-up-tape;
 #X obj 450 321 tape 1 \$0;
 #X obj 440 290 tape 0 \$0;
