@@ -34,6 +34,15 @@
 #X obj 470 383 tape 3 \$0;
 #X obj 480 416 tape 4 \$0;
 #X obj 490 447 tape 5 \$0;
+#X obj 791 323 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 860 364 s tape-\$0-0-stop;
+#X obj 850 400 s tape-\$0-1-stop;
+#X obj 840 438 s tape-\$0-2-stop;
+#X obj 830 476 s tape-\$0-3-stop;
+#X obj 820 512 s tape-\$0-4-stop;
+#X obj 810 550 s tape-\$0-5-stop;
+#X text 820 320 Bang to stop tapes (when testing);
 #X connect 0 0 8 0;
 #X connect 0 0 14 0;
 #X connect 14 0 15 0;
@@ -43,3 +52,9 @@
 #X connect 19 0 8 0;
 #X connect 20 0 8 0;
 #X connect 21 0 8 0;
+#X connect 22 0 23 0;
+#X connect 22 0 24 0;
+#X connect 22 0 25 0;
+#X connect 22 0 26 0;
+#X connect 22 0 27 0;
+#X connect 22 0 28 0;
