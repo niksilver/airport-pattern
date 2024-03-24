@@ -1,4 +1,4 @@
-#N canvas 449 -1056 890 802 10;
+#N canvas 43 -1047 1190 802 10;
 #X obj 40 30 loadbang;
 #X obj 40 55 s init;
 #X obj 420 40 v global-bpm;
@@ -136,7 +136,7 @@
 #X obj 391 419 thru-module 2;
 #X obj 110 30 r init;
 #X obj 110 57 f 60;
-#N canvas 48 -921 645 507 play-seq 0;
+#N canvas 48 0 645 507 play-seq 0;
 #X obj 151 69 inlet;
 #X text 200 70 symbol of sequence to play;
 #X obj 150 238 s notesIn-1;
@@ -180,6 +180,30 @@
 #X msg 270 208 symbol seq1;
 #X obj 290 238 text define -k seq1;
 #A set 0 69 100 1000 \; 1300 53 60 500;
+#N canvas 48 0 645 507 play-seq 0;
+#X obj 151 69 inlet;
+#X text 200 70 symbol of sequence to play;
+#X obj 150 238 s notesIn-1;
+#X msg 90 123 line 0 \, auto;
+#X obj 150 180 makenote;
+#X obj 150 210 pack f f;
+#X obj 151 94 t b s;
+#X obj 150 153 text sequence dummy -w 1;
+#X connect 0 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 3 0;
+#X connect 6 1 7 1;
+#X connect 7 0 4 0;
+#X restore 810 292 pd play-seq;
+#X text 830 260 wait (ms) \, midi note \, vel \, duration;
+#X obj 830 240 text define -k seven-notes;
+#A set 0 60 75 1000 \; 1000 61 75 1000 \; 1000 62 75 1000 \; 1000 63
+75 1000 \; 1000 64 75 1000 \; 1000 65 75 1000 \; 1000 66 75 1000 \;
+;
+#X msg 810 210 symbol seven-notes;
 #X connect 0 0 1 0;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
@@ -191,3 +215,4 @@
 #X connect 21 0 5 0;
 #X connect 25 0 22 0;
 #X connect 28 0 26 0;
+#X connect 33 0 30 0;
