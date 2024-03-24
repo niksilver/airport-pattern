@@ -1,6 +1,6 @@
-#N canvas 467 -1090 1186 1012 10;
-#X obj 540 170 text define \$1;
-#X text 540 197 \$1 is the text store name;
+#N canvas 441 -992 1186 914 10;
+#X obj 540 200 text define \$1;
+#X text 540 227 \$1 is the text store name;
 #X obj 110 50 inlet;
 #X text 160 50 Pitch and velocity pair;
 #X obj 110 75 t a a;
@@ -11,20 +11,46 @@
 #X obj 167 211 t b;
 #X obj 167 382 text insert \$1 1e+09;
 #X obj 169 114 t a a a;
-#N canvas 41 131 725 467 delete-entry 0;
+#N canvas 927 -940 855 532 delete-entry 1;
 #X obj 70 30 inlet;
 #X text 120 30 Pitch and velocity pair;
 #X obj 70 55 unpack f f;
 #X obj 70 80 text search \$1;
-#X obj 70 179 text delete \$1;
+#X obj 121 219 text delete \$1;
 #X obj 70 109 select -1;
-#X text 210 80 Given a pitch/velocity pair \, delete the line with
-that pitch.;
-#X text 120 144 Only delete if we have found a line;
+#X obj 70 264 text size \$1;
+#X obj 70 289 select 6;
+#X obj 70 429 text delete \$1;
+#X text 137 193 If we have found that note \, delete its line;
+#X text 90 380 If there are already six lines delete the first;
+#X obj 430 406 text get \$1 4;
+#X obj 430 431 outlet;
+#X obj 543 440 print NO_TAPE_TO_STOP;
+#X text 250 70 Given a pitch/velocity pair \, delete a line to make
+way for this one \, if necessary. Output a tape to stop \, if there
+is one.;
+#X text 250 120 (1) If there's already a line with that pitch. Else
+(2) if there are six lines already delete the top line (the oldest)
+- and we'll need to stop that tape. Else there's nothing to do.;
+#X obj 490 460 print TO_STOP_TAPE;
+#X obj 70 404 f 0;
+#X obj 70 314 t b b;
+#X obj 430 381 f 0;
+#X text 470 380 Capture which tape (from the first line) to stop;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
+#X connect 5 0 6 0;
 #X connect 5 1 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 18 0;
+#X connect 11 0 12 0;
+#X connect 11 0 16 0;
+#X connect 11 1 13 0;
+#X connect 17 0 8 0;
+#X connect 18 0 17 0;
+#X connect 18 1 19 0;
+#X connect 19 0 11 0;
 #X restore 216 295 pd delete-entry;
 #X text 241 242 Store the note pair in case it's note on;
 #X text 130 469 Store the note pair in case it's note off;
@@ -69,9 +95,9 @@ is not record of the note-on.;
 #X connect 13 1 11 0;
 #X connect 13 2 5 0;
 #X restore 370 616 pd get-note-duration;
-#X text 540 220 Text stores pitch \, velocity \, note duration \, tape
+#X text 540 250 Text stores pitch \, velocity \, note duration \, tape
 duration \, tape number (starts from 0).;
-#X text 540 260 Note on writes an entry with dummy note duration set
+#X text 540 290 Note on writes an entry with dummy note duration set
 at the current beat clock count \, tape duration has dummy value -99
 and tape number has dummy value -1;
 #X obj 167 357 pack f f 0 -99 -1;
@@ -159,7 +185,7 @@ there is a new tape loop to set up.;
 #X obj 370 572 t f f;
 #X obj 590 573 t b f;
 #X obj 170 705 text set \$1 0 3;
-#N canvas 198 238 908 452 calc-tape-duration 1;
+#N canvas 198 238 908 452 calc-tape-duration 0;
 #X obj 160 50 inlet;
 #X obj 145 302 outlet;
 #X text 210 50 Note duration;
@@ -191,6 +217,8 @@ its the note duration. Bang to output the value.;
 #X obj 50 522 t f f f f;
 #X obj 170 572 t b f;
 #X text 769 618 Value \, line number;
+#X msg 653 170 clear;
+#X text 700 170 For use when testing;
 #X connect 2 0 4 0;
 #X connect 4 0 7 0;
 #X connect 4 1 11 0;
@@ -232,3 +260,4 @@ its the note duration. Bang to output the value.;
 #X connect 44 3 41 0;
 #X connect 45 0 43 0;
 #X connect 45 1 42 1;
+#X connect 47 0 0 0;
