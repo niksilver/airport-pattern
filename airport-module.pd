@@ -1,4 +1,4 @@
-#N canvas 45 20 1267 850 12;
+#N canvas 213 -1021 1268 876 12;
 #X obj 315 17 r notesIn-\$1;
 #X obj 36 17 inlet~ inL-\$1;
 #X obj 146 17 inlet~ inR-\$1;
@@ -14,7 +14,7 @@
 #X obj 890 110 r global-bpm;
 #X obj 890 70 r beat-clock;
 #X obj 360 210 note-tracker airport-notes-\$1;
-#N canvas 476 280 570 354 set-up-tape 1;
+#N canvas 476 280 570 354 set-up-tape 0;
 #X text 100 30 Pitch \, velocity \, note duration \, tape duration
 \, tape number (starts from 0).;
 #X obj 30 30 inlet;
@@ -53,9 +53,15 @@
 #000000 #000000;
 #X obj 792 524 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
+#X msg 580 270 symbol tape-\$0-\$1-stop;
+#X obj 560 240 t b a;
+#X obj 580 294 t a a;
+#X obj 560 320 s;
+#X obj 607 335 print MODULE_SENDING_STOP;
 #X connect 0 0 8 0;
 #X connect 0 0 14 0;
 #X connect 14 0 15 0;
+#X connect 14 1 37 0;
 #X connect 16 0 8 0;
 #X connect 17 0 8 0;
 #X connect 18 0 8 0;
@@ -74,3 +80,8 @@
 #X connect 33 0 26 0;
 #X connect 34 0 27 0;
 #X connect 35 0 28 0;
+#X connect 36 0 38 0;
+#X connect 37 0 39 0;
+#X connect 37 1 36 0;
+#X connect 38 0 39 1;
+#X connect 38 1 40 0;

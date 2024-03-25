@@ -1,4 +1,4 @@
-#N canvas 441 -992 1186 914 10;
+#N canvas 137 8 1187 914 10;
 #X obj 540 200 text define \$1;
 #X text 540 227 \$1 is the text store name;
 #X obj 110 50 inlet;
@@ -9,9 +9,9 @@
 #X obj 70 120 unpack f f;
 #X obj 93 153 sel 0;
 #X obj 167 211 t b;
-#X obj 167 382 text insert \$1 1e+09;
+#X obj 167 412 text insert \$1 1e+09;
 #X obj 169 114 t a a a;
-#N canvas 927 -940 855 532 delete-entry 1;
+#N canvas 332 188 858 538 delete-entry 0;
 #X obj 70 30 inlet;
 #X text 120 30 Pitch and velocity pair;
 #X obj 70 55 unpack f f;
@@ -22,39 +22,40 @@
 #X obj 70 289 select 6;
 #X obj 70 429 text delete \$1;
 #X text 137 193 If we have found that note \, delete its line;
-#X text 90 380 If there are already six lines delete the first;
+#X text 117 314 If there are already six lines delete the first;
 #X obj 430 406 text get \$1 4;
 #X obj 430 431 outlet;
 #X obj 543 440 print NO_TAPE_TO_STOP;
-#X text 250 70 Given a pitch/velocity pair \, delete a line to make
-way for this one \, if necessary. Output a tape to stop \, if there
-is one.;
-#X text 250 120 (1) If there's already a line with that pitch. Else
-(2) if there are six lines already delete the top line (the oldest)
-- and we'll need to stop that tape. Else there's nothing to do.;
-#X obj 490 460 print TO_STOP_TAPE;
 #X obj 70 404 f 0;
 #X obj 70 314 t b b;
 #X obj 430 381 f 0;
 #X text 470 380 Capture which tape (from the first line) to stop;
+#X obj 490 460 print DELETE_ENTRY_TO_STOP_TAPE;
+#X text 250 70 Given a pitch/velocity pair \, delete a line to make
+way for a new one \, if necessary. Output a tape to stop \, if there
+is one.;
+#X text 250 120 Logic: (1) If there's already a line with that pitch
+then delete that. Else (2) if there are six lines already delete the
+top line (the oldest) - and we'll need to stop that tape. Else there's
+nothing to do.;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
 #X connect 5 0 6 0;
 #X connect 5 1 4 0;
 #X connect 6 0 7 0;
-#X connect 7 0 18 0;
+#X connect 7 0 15 0;
 #X connect 11 0 12 0;
-#X connect 11 0 16 0;
+#X connect 11 0 18 0;
 #X connect 11 1 13 0;
-#X connect 17 0 8 0;
-#X connect 18 0 17 0;
-#X connect 18 1 19 0;
-#X connect 19 0 11 0;
+#X connect 14 0 8 0;
+#X connect 15 0 14 0;
+#X connect 15 1 16 0;
+#X connect 16 0 11 0;
 #X restore 216 295 pd delete-entry;
 #X text 241 242 Store the note pair in case it's note on;
 #X text 130 469 Store the note pair in case it's note off;
-#X text 290 357 Add extra values and insert the line;
+#X text 290 387 Add extra values and insert the line;
 #X obj 50 430 t b;
 #X obj 288 91 r beat-clock;
 #X obj 288 116 t b;
@@ -64,7 +65,7 @@ is one.;
 #X obj 330 185 s beat-count-\$0;
 #X obj 330 130 r beat-count-\$0;
 #X obj 167 267 t a b a;
-#X obj 187 319 v beat-count-\$0;
+#X obj 187 349 v beat-count-\$0;
 #N canvas 448 160 906 450 get-note-duration 0;
 #X obj 70 50 inlet;
 #X text 340 50 \$1 is the text store name;
@@ -100,8 +101,8 @@ duration \, tape number (starts from 0).;
 #X text 540 290 Note on writes an entry with dummy note duration set
 at the current beat clock count \, tape duration has dummy value -99
 and tape number has dummy value -1;
-#X obj 167 357 pack f f 0 -99 -1;
-#N canvas 181 0 1159 914 get-next-tape-num 0;
+#X obj 167 387 pack f f 0 -99 -1;
+#N canvas 180 0 1161 914 get-next-tape-num 0;
 #X obj 80 50 inlet;
 #X text 270 30 \$1 is the text store name;
 #X text 130 50 Bang;
@@ -172,9 +173,7 @@ finally output whatever was last stored.;
 #X connect 36 0 11 0;
 #X restore 590 617 pd get-next-tape-num;
 #X obj 50 746 outlet;
-#X text 480 40 Track notes for the tape loops. Will output a line if
-there is a new tape loop to set up.;
-#X text 480 90 With thanks to Critter & Guitari for cg-note-tracker
+#X text 480 110 With thanks to Critter & Guitari for cg-note-tracker
 \, which can be found in the Pink Mode pattern.;
 #X obj 50 495 find-line \$1;
 #X obj 729 617 f;
@@ -219,17 +218,28 @@ its the note duration. Bang to output the value.;
 #X text 769 618 Value \, line number;
 #X msg 653 170 clear;
 #X text 700 170 For use when testing;
+#X text 480 40 Track notes for the tape loops. First outlet outputs
+a line if there is a new tape loop to set up. Second outlet says what
+tape needs stopping \, if any.;
+#X obj 216 320 outlet;
+#X text 270 320 Tape to stop (if any);
+#X obj 590 365 r note-tracker-delete-tape;
+#X text 762 364 Tape to delete;
+#X obj 590 390 text search \$1 4;
+#X obj 590 415 text delete \$1;
+#X obj 748 420 print NT_DELETE_TAPE;
 #X connect 2 0 4 0;
 #X connect 4 0 7 0;
 #X connect 4 1 11 0;
 #X connect 5 0 24 0;
-#X connect 6 0 34 0;
+#X connect 6 0 33 0;
 #X connect 7 1 8 0;
 #X connect 8 0 16 0;
 #X connect 8 1 9 0;
 #X connect 9 0 5 0;
 #X connect 11 0 6 1;
 #X connect 11 1 5 1;
+#X connect 12 0 49 0;
 #X connect 16 0 6 0;
 #X connect 17 0 18 0;
 #X connect 18 0 19 0;
@@ -241,23 +251,26 @@ its the note duration. Bang to output the value.;
 #X connect 24 1 25 0;
 #X connect 24 2 12 0;
 #X connect 25 0 29 2;
-#X connect 26 0 38 0;
-#X connect 26 0 43 1;
+#X connect 26 0 37 0;
+#X connect 26 0 42 1;
 #X connect 29 0 10 0;
-#X connect 30 0 39 0;
-#X connect 34 0 44 0;
-#X connect 35 0 39 1;
-#X connect 36 0 38 1;
-#X connect 37 0 31 0;
-#X connect 40 0 26 0;
-#X connect 40 1 36 0;
-#X connect 41 0 30 0;
-#X connect 41 1 35 0;
-#X connect 43 0 42 0;
-#X connect 44 0 37 0;
-#X connect 44 1 45 0;
-#X connect 44 2 40 0;
-#X connect 44 3 41 0;
-#X connect 45 0 43 0;
-#X connect 45 1 42 1;
-#X connect 47 0 0 0;
+#X connect 30 0 38 0;
+#X connect 33 0 43 0;
+#X connect 34 0 38 1;
+#X connect 35 0 37 1;
+#X connect 36 0 31 0;
+#X connect 39 0 26 0;
+#X connect 39 1 35 0;
+#X connect 40 0 30 0;
+#X connect 40 1 34 0;
+#X connect 42 0 41 0;
+#X connect 43 0 36 0;
+#X connect 43 1 44 0;
+#X connect 43 2 39 0;
+#X connect 43 3 40 0;
+#X connect 44 0 42 0;
+#X connect 44 1 41 1;
+#X connect 46 0 0 0;
+#X connect 51 0 53 0;
+#X connect 51 0 55 0;
+#X connect 53 0 54 0;
