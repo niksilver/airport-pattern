@@ -23,14 +23,12 @@
 #X obj 70 429 text delete \$1;
 #X text 137 193 If we have found that note \, delete its line;
 #X text 117 314 If there are already six lines delete the first;
-#X obj 430 406 text get \$1 4;
-#X obj 430 431 outlet;
-#X obj 543 440 print NO_TAPE_TO_STOP;
+#X obj 200 429 text get \$1 4;
+#X obj 200 474 outlet;
 #X obj 70 404 f 0;
 #X obj 70 314 t b b;
-#X obj 430 381 f 0;
-#X text 470 380 Capture which tape (from the first line) to stop;
-#X obj 490 460 print DELETE_ENTRY_TO_STOP_TAPE;
+#X obj 200 404 f 0;
+#X text 240 403 Capture which tape (from the first line) to stop;
 #X text 250 70 Given a pitch/velocity pair \, delete a line to make
 way for a new one \, if necessary. Output a tape to stop \, if there
 is one.;
@@ -44,14 +42,12 @@ nothing to do.;
 #X connect 5 0 6 0;
 #X connect 5 1 4 0;
 #X connect 6 0 7 0;
-#X connect 7 0 15 0;
+#X connect 7 0 14 0;
 #X connect 11 0 12 0;
-#X connect 11 0 18 0;
-#X connect 11 1 13 0;
-#X connect 14 0 8 0;
-#X connect 15 0 14 0;
-#X connect 15 1 16 0;
-#X connect 16 0 11 0;
+#X connect 13 0 8 0;
+#X connect 14 0 13 0;
+#X connect 14 1 15 0;
+#X connect 15 0 11 0;
 #X restore 216 295 pd delete-entry;
 #X text 241 242 Store the note pair in case it's note on;
 #X text 130 469 Store the note pair in case it's note off;
@@ -218,16 +214,20 @@ its the note duration. Bang to output the value.;
 #X text 769 618 Value \, line number;
 #X msg 653 170 clear;
 #X text 700 170 For use when testing;
-#X text 480 40 Track notes for the tape loops. First outlet outputs
-a line if there is a new tape loop to set up. Second outlet says what
-tape needs stopping \, if any.;
 #X obj 216 320 outlet;
 #X text 270 320 Tape to stop (if any);
-#X obj 590 365 r note-tracker-delete-tape;
-#X text 762 364 Tape to delete;
-#X obj 590 390 text search \$1 4;
-#X obj 590 415 text delete \$1;
-#X obj 748 420 print NT_DELETE_TAPE;
+#X obj 540 415 r note-tracker-delete-tape;
+#X text 712 414 Tape to delete;
+#X obj 540 440 text search \$1 4;
+#X obj 540 465 text delete \$1;
+#X text 480 40 Track notes for the tape loops. First outlet outputs
+a line if there is a new tape loop to set up. Second outlet says what
+tape needs stopping \, if any. There's also an receiver to delete a
+line by tape number.;
+#X text 480 40 Track notes for the tape loops. First outlet outputs
+a line if there is a new tape loop to set up. Second outlet says what
+tape needs stopping \, if any. There's also an receiver to delete a
+line by tape number.;
 #X connect 2 0 4 0;
 #X connect 4 0 7 0;
 #X connect 4 1 11 0;
@@ -239,7 +239,7 @@ tape needs stopping \, if any.;
 #X connect 9 0 5 0;
 #X connect 11 0 6 1;
 #X connect 11 1 5 1;
-#X connect 12 0 49 0;
+#X connect 12 0 48 0;
 #X connect 16 0 6 0;
 #X connect 17 0 18 0;
 #X connect 18 0 19 0;
@@ -271,6 +271,5 @@ tape needs stopping \, if any.;
 #X connect 44 0 42 0;
 #X connect 44 1 41 1;
 #X connect 46 0 0 0;
-#X connect 51 0 53 0;
-#X connect 51 0 55 0;
-#X connect 53 0 54 0;
+#X connect 50 0 52 0;
+#X connect 52 0 53 0;

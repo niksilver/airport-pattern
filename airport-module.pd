@@ -1,4 +1,4 @@
-#N canvas 184 -1031 1268 876 12;
+#N canvas 462 -959 1268 876 12;
 #X obj 315 17 r notesIn-\$1;
 #X obj 36 17 inlet~ inL-\$1;
 #X obj 146 17 inlet~ inR-\$1;
@@ -39,7 +39,6 @@
 #X obj 560 240 t b a;
 #X obj 580 294 t a a;
 #X obj 560 320 s;
-#X obj 607 335 print MODULE_SENDING_STOP;
 #N canvas 1223 -624 550 223 stop-tape-and-delete-5 0;
 #X obj 70 126 s tape-\$0-5-stop;
 #X obj 102 99 s note-tracker-delete-tape;
@@ -110,14 +109,13 @@
 #X connect 19 0 8 0;
 #X connect 20 0 8 0;
 #X connect 21 0 8 0;
+#X connect 22 0 29 0;
 #X connect 22 0 30 0;
 #X connect 22 0 31 0;
 #X connect 22 0 32 0;
 #X connect 22 0 33 0;
-#X connect 22 0 34 0;
-#X connect 22 0 29 0;
+#X connect 22 0 28 0;
 #X connect 24 0 26 0;
 #X connect 25 0 27 0;
 #X connect 25 1 24 0;
 #X connect 26 0 27 1;
-#X connect 26 1 28 0;
