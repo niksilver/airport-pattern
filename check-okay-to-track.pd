@@ -1,0 +1,24 @@
+#N canvas 541 -819 616 292 10;
+#X obj 102 21 inlet;
+#X obj 102 242 outlet;
+#X obj 194 242 outlet;
+#X text 232 153 \$1 is the text store name;
+#X text 230 60 Given a line number \, check it is okay to update with
+a tape number - in other words \, that it isn't already committed to
+a tape. Output the original line number if okay \, otherwise send a
+bang to the second outlet.;
+#X text 152 21 Line number;
+#X obj 102 75 text get \$1;
+#X obj 102 103 unpack f f f f f;
+#X obj 102 148 select -1;
+#X obj 102 48 t f f;
+#X obj 102 188 f;
+#X text 23 188 Line number;
+#X connect 0 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 4 8 0;
+#X connect 8 0 10 0;
+#X connect 8 1 2 0;
+#X connect 9 0 6 0;
+#X connect 9 1 10 1;
+#X connect 10 0 1 0;

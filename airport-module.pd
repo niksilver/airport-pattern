@@ -1,4 +1,4 @@
-#N canvas 462 -959 1268 876 12;
+#N canvas 543 15 1269 877 12;
 #X obj 315 17 r notesIn-\$1;
 #X obj 36 17 inlet~ inL-\$1;
 #X obj 146 17 inlet~ inR-\$1;
@@ -39,7 +39,7 @@
 #X obj 560 240 t b a;
 #X obj 580 294 t a a;
 #X obj 560 320 s;
-#N canvas 1223 -624 550 223 stop-tape-and-delete-5 0;
+#N canvas 1223 0 550 223 stop-tape-and-delete-5 0;
 #X obj 70 126 s tape-\$0-5-stop;
 #X obj 102 99 s note-tracker-delete-tape;
 #X obj 70 70 t b 5;
