@@ -1,4 +1,4 @@
-#N canvas 171 -1073 1190 802 10;
+#N canvas 103 -1076 1190 802 10;
 #X obj 40 30 loadbang;
 #X obj 40 55 s init;
 #X obj 420 40 v global-bpm;
@@ -276,7 +276,7 @@
 #X obj 880 548 text define -k two-notes-together;
 #A set 0 60 75 1000 \; 0 60 75 1000 \;;
 #X text 580 320 To test that tapes are reused;
-#N canvas 48 0 645 507 play-seq 0;
+#N canvas 438 203 646 508 play-seq 0;
 #X obj 151 69 inlet;
 #X text 200 70 symbol of sequence to play;
 #X obj 150 238 s notesIn-1;
@@ -296,7 +296,7 @@
 #X restore 580 742 pd play-seq;
 #X text 600 710 wait (ms) \, midi note \, vel \, duration;
 #X obj 600 690 text define -k slow-then-quick;
-#A set;
+#A set 0 63 70 1000 \; 1500 63 70 200;
 #X msg 580 660 symbol slow-then-quick;
 #X connect 0 0 1 0;
 #X connect 5 0 6 0;
