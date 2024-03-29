@@ -1,4 +1,4 @@
-#N canvas -204 52 1190 805 10;
+#N canvas 76 50 1190 808 10;
 #X obj 40 30 loadbang;
 #X obj 40 55 s init;
 #X obj 420 40 v global-bpm;
@@ -126,9 +126,7 @@
 #X restore 220 688 pd synth;
 #X text 270 530 sends to notesOut-\$1;
 #X obj 220 650 r notesOut-1;
-#X text 220 590 sends to notesOut-\$1;
 #X obj 160 530 airport-module 1;
-#X obj 160 590 module 2;
 #X text 160 500 Only the module numbered 1 is used;
 #X text 271 559 sends to notesOut-\$1;
 #X obj 161 559 thru-module 2;
@@ -294,9 +292,6 @@
 #X obj 600 300 text define -k same-two-notes-together;
 #A set 0 60 75 1000 \; 0 60 75 1000 \;;
 #X msg 580 277 symbol same-two-notes-together;
-#X obj 600 715 text define -k stop-three-notes;
-#A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 60
-70 200 \; 100 62 70 200;
 #N canvas 438 203 646 508 play-seq 0;
 #X obj 151 69 inlet;
 #X text 200 70 symbol of sequence to play;
@@ -315,9 +310,6 @@
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
 #X restore 860 740 pd play-seq;
-#X obj 880 715 text define -k stop-three-notes;
-#A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 60
-70 200 \; 100 62 70 200;
 #X obj 880 715 text define -k any-double-click;
 #A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 66
 70 200 \; 100 68 70 200;
@@ -356,15 +348,15 @@
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 12 0 10 0;
-#X connect 19 0 20 0;
-#X connect 20 0 5 0;
-#X connect 22 0 21 0;
-#X connect 26 0 24 0;
-#X connect 28 0 27 0;
-#X connect 32 0 30 0;
-#X connect 38 0 36 0;
-#X connect 42 0 41 0;
-#X connect 46 0 34 0;
-#X connect 51 0 48 0;
-#X connect 53 0 55 0;
-#X connect 61 0 57 0;
+#X connect 17 0 18 0;
+#X connect 18 0 5 0;
+#X connect 20 0 19 0;
+#X connect 24 0 22 0;
+#X connect 26 0 25 0;
+#X connect 30 0 28 0;
+#X connect 36 0 34 0;
+#X connect 40 0 39 0;
+#X connect 44 0 32 0;
+#X connect 47 0 45 0;
+#X connect 49 0 51 0;
+#X connect 57 0 53 0;
