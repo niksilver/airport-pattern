@@ -261,13 +261,12 @@
 #X connect 6 0 3 0;
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
-#X restore 860 462 pd play-seq;
-#X obj 880 437 text define -k slow-then-quick;
+#X restore 580 600 pd play-seq;
+#X obj 600 575 text define -k slow-then-quick;
 #A set 0 63 70 1000 \; 1500 63 70 200;
-#X msg 860 410 symbol slow-then-quick;
-#X text 860 380 The quick note should stop the first one;
+#X msg 580 548 symbol slow-then-quick;
 #X text 580 148 A simple two-note sequence;
-#X text 580 510 Double quick click to stop three notes;
+#X text 580 660 Double quick click to stop three notes;
 #N canvas 437 202 648 510 play-seq 0;
 #X obj 151 69 inlet;
 #X text 200 70 symbol of sequence to play;
@@ -285,9 +284,9 @@
 #X connect 6 0 3 0;
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
-#X restore 580 592 pd play-seq;
-#X msg 580 540 symbol stop-three-notes;
-#X obj 600 565 text define -k stop-three-notes;
+#X restore 580 742 pd play-seq;
+#X msg 580 690 symbol stop-three-notes;
+#X obj 600 715 text define -k stop-three-notes;
 #A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 60
 70 200 \; 100 62 70 200;
 #X text 650 30 Data in these tests are: wait (ms) \, midi note \, vel
@@ -295,7 +294,7 @@
 #X obj 600 300 text define -k same-two-notes-together;
 #A set 0 60 75 1000 \; 0 60 75 1000 \;;
 #X msg 580 277 symbol same-two-notes-together;
-#X obj 600 565 text define -k stop-three-notes;
+#X obj 600 715 text define -k stop-three-notes;
 #A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 60
 70 200 \; 100 62 70 200;
 #N canvas 438 203 646 508 play-seq 0;
@@ -315,20 +314,43 @@
 #X connect 6 0 3 0;
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
-#X restore 860 590 pd play-seq;
-#X obj 880 565 text define -k stop-three-notes;
+#X restore 860 740 pd play-seq;
+#X obj 880 715 text define -k stop-three-notes;
 #A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 60
 70 200 \; 100 62 70 200;
-#X obj 880 565 text define -k any-double-click;
+#X obj 880 715 text define -k any-double-click;
 #A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 66
 70 200 \; 100 68 70 200;
-#X msg 860 540 symbol any-double-click;
-#X text 860 510 Double quick click anything to stop three notes;
+#X msg 860 690 symbol any-double-click;
+#X text 860 660 Double quick click anything to stop three notes;
 #X obj 650 60 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X text 679 60 Bang to stop tapes (when testing);
 #X obj 650 89 s airport-notes-stop-all-1;
 #X text 830 89 It's ...-1 because we're assuming it's pattern 1;
+#N canvas 438 203 646 508 play-seq 0;
+#X obj 151 69 inlet;
+#X text 200 70 symbol of sequence to play;
+#X obj 150 238 s notesIn-1;
+#X msg 90 123 line 0 \, auto;
+#X obj 150 180 makenote;
+#X obj 150 210 pack f f;
+#X obj 151 94 t b s;
+#X obj 150 153 text sequence dummy -w 1;
+#X connect 0 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 3 0;
+#X connect 6 1 7 1;
+#X connect 7 0 4 0;
+#X restore 860 600 pd play-seq;
+#X text 580 517 The quick note should stop the same one;
+#X text 860 518 The quick note should stop only the same one;
+#X obj 880 574 text define -k stop-just-one;
+#A set 0 58 70 800 \; 1500 70 70 1000 \; 4000 58 70 200;
+#X msg 860 548 symbol stop-just-one;
 #X connect 0 0 1 0;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
@@ -341,7 +363,8 @@
 #X connect 28 0 27 0;
 #X connect 32 0 30 0;
 #X connect 38 0 36 0;
-#X connect 43 0 42 0;
-#X connect 47 0 34 0;
-#X connect 52 0 49 0;
-#X connect 54 0 56 0;
+#X connect 42 0 41 0;
+#X connect 46 0 34 0;
+#X connect 51 0 48 0;
+#X connect 53 0 55 0;
+#X connect 61 0 57 0;
