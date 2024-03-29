@@ -261,7 +261,7 @@ quick click.;
 #X restore 240 300 pd save-quick-click-time;
 #X obj 540 400 text define \$1-click-time;
 #X text 710 400 Note value and wall clock time;
-#N canvas 249 112 657 694 check-quick-click-time 0;
+#N canvas 248 112 658 782 check-quick-click-time 0;
 #X obj 150 390 r init;
 #X obj 230 430 realtime;
 #X obj 319 110 inlet;
@@ -286,7 +286,7 @@ quick \, pass the input line number to the first outlet. Otherwise
 ;
 #X obj 330 590 t b;
 #X text 200 645 Slow note;
-#X text 406 645 Quick note;
+#X text 407 646 Quick note;
 #X connect 0 0 1 0;
 #X connect 1 0 9 1;
 #X connect 2 0 11 0;
@@ -309,7 +309,7 @@ quick \, pass the input line number to the first outlet. Otherwise
 #X restore 50 578 pd check-quick-click-time;
 #X msg 663 369 clear;
 #X text 710 369 For use when testing;
-#N canvas 509 536 453 302 stop-and-delete-tape 1;
+#N canvas 509 536 453 302 stop-and-delete-tape 0;
 #X text 150 30 Stop a tape and delete it from the tracker;
 #X obj 60 100 inlet;
 #X text 110 100 Line number;
