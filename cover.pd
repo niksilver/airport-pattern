@@ -1,4 +1,4 @@
-#N canvas 103 -1076 1190 802 10;
+#N canvas -216 51 1190 803 10;
 #X obj 40 30 loadbang;
 #X obj 40 55 s init;
 #X obj 420 40 v global-bpm;
