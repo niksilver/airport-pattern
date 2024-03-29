@@ -1,6 +1,6 @@
-#N canvas 164 0 1194 914 10;
-#X obj 540 200 text define \$1;
-#X text 540 227 \$1 is the text store name;
+#N canvas 164 0 979 914 10;
+#X obj 560 386 text define \$1;
+#X text 480 103 \$1 is the text store name;
 #X obj 110 50 inlet;
 #X text 160 50 Pitch and velocity pair;
 #X obj 110 75 t a a;
@@ -97,7 +97,7 @@ is not record of the note-on.;
 #X connect 13 1 11 0;
 #X connect 13 2 5 0;
 #X restore 370 716 pd get-note-duration;
-#X text 540 250 Text stores pitch \, velocity \, note duration \, tape
+#X text 560 410 Text stores pitch \, velocity \, note duration \, tape
 duration \, tape number (starts from 0).;
 #X obj 167 417 pack f f 0 -99 -1;
 #N canvas 180 0 1162 914 get-next-tape-num 0;
@@ -171,7 +171,7 @@ finally output whatever was last stored.;
 #X connect 36 0 11 0;
 #X restore 590 717 pd get-next-tape-num;
 #X obj 50 866 outlet;
-#X text 540 300 With thanks to Critter & Guitari for cg-note-tracker
+#X text 481 173 With thanks to Critter & Guitari for cg-note-tracker
 \, which can be found in the Pink Mode pattern.;
 #X obj 729 717 f;
 #X obj 510 687 f;
@@ -213,12 +213,12 @@ its the note duration. Bang to output the value.;
 #X obj 50 622 t f f f f;
 #X obj 170 672 t b f;
 #X text 769 718 Value \, line number;
-#X msg 653 170 clear;
-#X text 700 170 For use when testing;
-#X obj 540 485 r note-tracker-delete-tape;
-#X text 712 484 Tape to delete;
-#X obj 540 510 text search \$1 4;
-#X obj 540 535 text delete \$1;
+#X msg 673 356 clear;
+#X text 720 356 For use when testing;
+#X obj 560 255 r note-tracker-delete-tape;
+#X text 730 255 Tape to delete;
+#X obj 560 280 text search \$1 4;
+#X obj 560 305 text delete \$1;
 #X text 480 40 Track notes for the tape loops. First outlet outputs
 a line if there is a new tape loop to set up. Second outlet says what
 tape needs stopping \, if any. There's also an receiver to delete a
@@ -227,7 +227,7 @@ line by tape number.;
 a line if there is a new tape loop to set up. Second outlet says what
 tape needs stopping \, if any. There's also an receiver to delete a
 line by tape number.;
-#X text 480 104 Logic: Note on writes an entry with dummy note duration
+#X text 480 124 Logic: Note on writes an entry with dummy note duration
 set at the current beat clock count \, tape duration has dummy value
 -99 and tape number has dummy value -1;
 #X obj 167 267 t a b a a;
@@ -257,8 +257,8 @@ quick click.;
 #X connect 11 1 2 1;
 #X connect 11 2 6 0;
 #X restore 240 300 pd save-quick-click-time;
-#X obj 540 400 text define \$1-click-time;
-#X text 710 400 Note value and wall clock time;
+#X obj 560 510 text define \$1-click-time;
+#X text 730 510 Note value and wall clock time;
 #N canvas 248 112 658 782 check-quick-click-time 0;
 #X obj 150 390 r init;
 #X obj 230 430 realtime;
@@ -305,8 +305,8 @@ quick \, pass the input line number to the first outlet. Otherwise
 #X connect 17 0 8 0;
 #X connect 19 0 13 0;
 #X restore 50 578 pd check-quick-click-time;
-#X msg 663 369 clear;
-#X text 710 369 For use when testing;
+#X msg 683 479 clear;
+#X text 730 479 For use when testing;
 #N canvas 509 536 453 302 stop-and-delete-tape 0;
 #X text 150 30 Stop a tape and delete it from the tracker;
 #X obj 60 100 inlet;
