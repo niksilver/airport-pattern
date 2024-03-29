@@ -1,4 +1,4 @@
-#N canvas 125 17 1271 879 12;
+#N canvas 124 16 1273 881 12;
 #X obj 315 17 r notesIn-\$1;
 #X obj 36 17 inlet~ inL-\$1;
 #X obj 146 17 inlet~ inR-\$1;
@@ -32,9 +32,6 @@
 #X obj 470 383 tape 3 \$0;
 #X obj 480 416 tape 4 \$0;
 #X obj 490 447 tape 5 \$0;
-#X obj 971 313 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X text 1000 313 Bang to stop tapes (when testing);
 #X obj 510 242 s tape-\$0-stop;
 #N canvas 484 344 554 226 stop-tape-and-delete 0;
 #X obj 102 99 s note-tracker-delete-tape;
@@ -52,14 +49,13 @@
 #X connect 0 0 8 0;
 #X connect 0 0 14 0;
 #X connect 14 0 15 0;
-#X connect 14 1 24 0;
-#X connect 14 2 28 0;
+#X connect 14 1 22 0;
+#X connect 14 2 26 0;
 #X connect 16 0 8 0;
 #X connect 17 0 8 0;
 #X connect 18 0 8 0;
 #X connect 19 0 8 0;
 #X connect 20 0 8 0;
 #X connect 21 0 8 0;
-#X connect 22 0 26 0;
-#X connect 26 0 25 0;
-#X connect 27 0 26 0;
+#X connect 24 0 23 0;
+#X connect 25 0 24 0;

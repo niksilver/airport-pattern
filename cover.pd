@@ -1,4 +1,4 @@
-#N canvas -152 27 1190 803 10;
+#N canvas -204 52 1190 805 10;
 #X obj 40 30 loadbang;
 #X obj 40 55 s init;
 #X obj 420 40 v global-bpm;
@@ -151,10 +151,9 @@
 #X connect 6 0 3 0;
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
-#X restore 580 150 pd play-seq;
-#X text 600 118 wait (ms) \, midi note \, vel \, duration;
-#X msg 580 68 symbol seq1;
-#X obj 600 98 text define -k seq1;
+#X restore 580 223 pd play-seq;
+#X msg 580 176 symbol seq1;
+#X obj 600 199 text define -k seq1;
 #A set 0 69 100 1000 \; 1300 53 60 500;
 #N canvas 48 0 645 507 play-seq 0;
 #X obj 151 69 inlet;
@@ -173,13 +172,12 @@
 #X connect 6 0 3 0;
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
-#X restore 580 322 pd play-seq;
-#X text 600 290 wait (ms) \, midi note \, vel \, duration;
-#X obj 600 270 text define -k seven-notes;
+#X restore 860 226 pd play-seq;
+#X obj 880 200 text define -k seven-notes;
 #A set 0 60 75 1000 \; 1000 61 75 1000 \; 1000 62 75 1000 \; 1000 63
 75 1000 \; 1000 64 75 1000 \; 1000 65 75 1000 \; 1000 66 75 1000 \;
 ;
-#X msg 580 240 symbol seven-notes;
+#X msg 860 176 symbol seven-notes;
 #N canvas 48 0 645 507 play-seq 0;
 #X obj 151 69 inlet;
 #X text 200 70 symbol of sequence to play;
@@ -197,10 +195,9 @@
 #X connect 6 0 3 0;
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
-#X restore 860 320 pd play-seq;
-#X text 880 288 wait (ms) \, midi note \, vel \, duration;
-#X msg 860 238 symbol fourteen-notes-together;
-#X obj 880 268 text define -k fourteen-notes-together;
+#X restore 860 328 pd play-seq;
+#X msg 860 278 symbol fourteen-notes-together;
+#X obj 880 302 text define -k fourteen-notes-together;
 #A set 0 60 70 1000 \; 0 61 70 1000 \; 0 62 70 1000 \; 0 63 70 1000
 \; 0 64 70 1000 \; 0 65 70 1000 \; 0 66 70 1000 \; 0 67 70 1000 \;
 0 68 70 1000 \; 0 69 70 1000 \; 0 70 70 1000 \; 0 71 70 1000 \; 0 72
@@ -222,9 +219,8 @@
 #X connect 6 0 3 0;
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
-#X restore 580 492 pd play-seq;
-#X text 600 460 wait (ms) \, midi note \, vel \, duration;
-#X obj 600 440 text define -k seven-notes-overlapping;
+#X restore 580 458 pd play-seq;
+#X obj 600 433 text define -k seven-notes-overlapping;
 #A set 0 60 70 1000 \; 100 61 70 1000 \; 100 62 70 1000 \; 100 63 70
 1000 \; 100 64 70 1000 \; 100 65 70 1000 \; 100 60 70 1000 \;;
 #X msg 580 410 symbol seven-notes-overlapping;
@@ -246,12 +242,8 @@
 #X connect 6 0 3 0;
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
-#X restore 860 490 pd play-seq;
-#X text 880 458 wait (ms) \, midi note \, vel \, duration;
-#X msg 860 408 symbol two-notes-together;
-#X obj 880 438 text define -k two-notes-together;
-#A set 0 60 75 1000 \; 0 60 75 1000 \;;
-#X text 580 210 To test that tapes are reused;
+#X restore 580 325 pd play-seq;
+#X text 860 146 To test that tapes are reused;
 #N canvas 438 203 646 508 play-seq 0;
 #X obj 151 69 inlet;
 #X text 200 70 symbol of sequence to play;
@@ -269,15 +261,14 @@
 #X connect 6 0 3 0;
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
-#X restore 580 662 pd play-seq;
-#X text 600 630 wait (ms) \, midi note \, vel \, duration;
-#X obj 600 610 text define -k slow-then-quick;
+#X restore 860 462 pd play-seq;
+#X obj 880 437 text define -k slow-then-quick;
 #A set 0 63 70 1000 \; 1500 63 70 200;
-#X msg 580 580 symbol slow-then-quick;
-#X text 580 550 The quick note should stop the first one;
-#X text 580 40 A simple two-note sequence;
-#X text 860 550 Double quick click to stop three notes;
-#N canvas 438 203 646 508 play-seq 0;
+#X msg 860 410 symbol slow-then-quick;
+#X text 860 380 The quick note should stop the first one;
+#X text 580 148 A simple two-note sequence;
+#X text 580 510 Double quick click to stop three notes;
+#N canvas 437 202 648 510 play-seq 0;
 #X obj 151 69 inlet;
 #X text 200 70 symbol of sequence to play;
 #X obj 150 238 s notesIn-1;
@@ -294,12 +285,50 @@
 #X connect 6 0 3 0;
 #X connect 6 1 7 1;
 #X connect 7 0 4 0;
-#X restore 860 662 pd play-seq;
-#X text 880 630 wait (ms) \, midi note \, vel \, duration;
-#X msg 860 580 symbol stop-three-notes;
-#X obj 880 608 text define -k stop-three-notes;
+#X restore 580 592 pd play-seq;
+#X msg 580 540 symbol stop-three-notes;
+#X obj 600 565 text define -k stop-three-notes;
 #A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 60
 70 200 \; 100 62 70 200;
+#X text 650 30 Data in these tests are: wait (ms) \, midi note \, vel
+\, duration;
+#X obj 600 300 text define -k same-two-notes-together;
+#A set 0 60 75 1000 \; 0 60 75 1000 \;;
+#X msg 580 277 symbol same-two-notes-together;
+#X obj 600 565 text define -k stop-three-notes;
+#A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 60
+70 200 \; 100 62 70 200;
+#N canvas 438 203 646 508 play-seq 0;
+#X obj 151 69 inlet;
+#X text 200 70 symbol of sequence to play;
+#X obj 150 238 s notesIn-1;
+#X msg 90 123 line 0 \, auto;
+#X obj 150 180 makenote;
+#X obj 150 210 pack f f;
+#X obj 151 94 t b s;
+#X obj 150 153 text sequence dummy -w 1;
+#X connect 0 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 3 0;
+#X connect 6 1 7 1;
+#X connect 7 0 4 0;
+#X restore 860 590 pd play-seq;
+#X obj 880 565 text define -k stop-three-notes;
+#A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 60
+70 200 \; 100 62 70 200;
+#X obj 880 565 text define -k any-double-click;
+#A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 66
+70 200 \; 100 68 70 200;
+#X msg 860 540 symbol any-double-click;
+#X text 860 510 Double quick click anything to stop three notes;
+#X obj 650 60 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 679 60 Bang to stop tapes (when testing);
+#X obj 650 89 s airport-notes-stop-all-1;
+#X text 830 89 It's ...-1 because we're assuming it's pattern 1;
 #X connect 0 0 1 0;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
@@ -307,10 +336,12 @@
 #X connect 12 0 10 0;
 #X connect 19 0 20 0;
 #X connect 20 0 5 0;
-#X connect 23 0 21 0;
-#X connect 28 0 25 0;
-#X connect 31 0 29 0;
-#X connect 36 0 33 0;
-#X connect 40 0 38 0;
-#X connect 46 0 43 0;
-#X connect 52 0 50 0;
+#X connect 22 0 21 0;
+#X connect 26 0 24 0;
+#X connect 28 0 27 0;
+#X connect 32 0 30 0;
+#X connect 38 0 36 0;
+#X connect 43 0 42 0;
+#X connect 47 0 34 0;
+#X connect 52 0 49 0;
+#X connect 54 0 56 0;
