@@ -1,0 +1,14 @@
+#N canvas 536 304 450 306 10;
+#X obj 90 181 makenote;
+#X obj 90 210 pack f f;
+#X obj 90 30 inlet;
+#X obj 90 101 t f 100 500;
+#X text 150 30 Pitch;
+#X obj 90 239 s notesOut-p3;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 3 2 0 2;
