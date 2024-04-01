@@ -35,7 +35,7 @@ position;
 #X connect 7 0 2 1;
 #X restore 360 242 pd set-up-tape;
 #N canvas 484 344 554 226 stop-tape-and-delete 0;
-#X obj 102 99 s note-tracker-delete-tape;
+#X obj 102 99 s note-tracker-delete-tape-\$1;
 #X obj 70 40 inlet;
 #X text 120 40 Tape number to stop and delete from tracker;
 #X obj 70 70 t f f;

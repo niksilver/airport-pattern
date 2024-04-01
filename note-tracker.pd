@@ -217,7 +217,7 @@ its the note duration. Bang to output the value.;
 #X text 769 718 Value \, line number;
 #X msg 673 356 clear;
 #X text 720 356 For use when testing;
-#X obj 560 255 r note-tracker-delete-tape;
+#X obj 560 255 r note-tracker-delete-tape-\$1;
 #X text 730 255 Tape to delete;
 #X obj 560 280 text search \$2 4;
 #X obj 560 305 text delete \$2;
