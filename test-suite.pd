@@ -1,4 +1,4 @@
-#N canvas 182 -1093 1194 814 10;
+#N canvas 91 -1088 1194 814 10;
 #X obj 50 130 loadbang;
 #X obj 420 40 v global-bpm;
 #X obj 420 65 v beat-clock;
@@ -253,7 +253,7 @@
 #X connect 6 0 3 0;
 #X restore 580 600 pd play-seq;
 #X obj 600 575 text define -k slow-then-quick;
-#A set 0 63 70 1000 \; 1500 63 70 200;
+#A set 0 63 70 1000 \; 1500 63 70 120;
 #X msg 580 548 symbol slow-then-quick;
 #X text 580 148 A simple two-note sequence;
 #X text 580 660 Double quick click to stop three notes;
@@ -278,7 +278,7 @@
 #X msg 580 690 symbol stop-three-notes;
 #X obj 600 715 text define -k stop-three-notes;
 #A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 60
-70 200 \; 100 62 70 200;
+70 120 \; 100 62 70 120;
 #X text 650 30 Data in these tests are: wait (ms) \, midi note \, vel
 \, duration;
 #X obj 600 300 text define -k same-two-notes-together;
@@ -304,7 +304,7 @@
 #X restore 860 740 pd play-seq;
 #X obj 880 715 text define -k any-double-click;
 #A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 66
-70 200 \; 100 68 70 200;
+70 120 \; 100 68 70 120;
 #X msg 860 690 symbol any-double-click;
 #X text 860 660 Double quick click anything to stop three notes;
 #X obj 650 60 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -332,7 +332,7 @@
 #X text 580 517 The quick note should stop the same one;
 #X text 860 518 The quick note should stop only the same one;
 #X obj 880 574 text define -k stop-just-one;
-#A set 0 58 70 800 \; 1500 70 70 1000 \; 4000 58 70 200;
+#A set 0 58 70 800 \; 1000 70 70 1000 \; 4000 58 70 120;
 #X msg 860 548 symbol stop-just-one;
 #X text 220 530 Our module in slot 1 \, sends to notesOut-\$1;
 #X text 60 261 For outside our module;
