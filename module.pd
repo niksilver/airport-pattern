@@ -1,4 +1,4 @@
-#N canvas 124 4 1274 906 12;
+#N canvas 367 -1012 1274 906 12;
 #X obj 315 17 r notesIn-\$1;
 #X obj 36 17 inlet~ inL-\$1;
 #X obj 146 17 inlet~ inR-\$1;
@@ -52,7 +52,7 @@
 #X obj 480 416 tape 4 \$1;
 #X obj 490 447 tape 5 \$1;
 #X obj 510 242 s tape-\$1-stop;
-#X obj 360 210 note-tracker airport-notes-\$1 \$1;
+#X obj 360 210 note-tracker \$1 airport-notes-\$1;
 #X connect 0 0 8 0;
 #X connect 0 0 26 0;
 #X connect 16 0 15 0;
