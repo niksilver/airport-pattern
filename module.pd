@@ -1,4 +1,4 @@
-#N canvas 124 0 1274 914 12;
+#N canvas 124 0 1173 700 12;
 #X obj 315 17 r notesIn-\$1;
 #X obj 36 17 inlet~ inL-\$1;
 #X obj 146 17 inlet~ inR-\$1;
