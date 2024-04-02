@@ -1,4 +1,4 @@
-#N canvas 330 -1067 1023 830 10;
+#N canvas 248 40 1026 833 10;
 #X obj 39 139 r beat-clock;
 #X obj 309 175 unpack f f f f f;
 #X obj 310 297 pack f f;
@@ -6,8 +6,8 @@
 #X msg 312 676 set \$1 \$2;
 #X msg 332 715 65 70;
 #X obj 312 626 t a a;
-#X text 643 676 Pitch \, note-off;
-#X msg 572 676 set \$1 0;
+#X text 428 653 Pitch \, note-off;
+#X msg 412 676 set \$1 0;
 #X msg 552 715 65 0;
 #X obj 498 353 f;
 #X text 543 353 Tape count \, initial value note duration;
@@ -41,7 +41,7 @@
 #X obj 549 385 r tape-\$2-tdur-\$1;
 #X obj 573 486 s tape-\$2-count-right-\$1;
 #X obj 573 523 r tape-\$2-ndur-\$1;
-#X obj 399 676 r tape-\$2-note-off-\$1;
+#X obj 579 676 r tape-\$2-note-off-\$1;
 #X msg 786 156 0;
 #X obj 759 115 t b b;
 #X msg 139 165 1;
@@ -50,6 +50,7 @@
 ;
 #X text 330 110 This receiver sets up a running tape. We initialise
 it at the point of note off (beat count is the note duration).;
+#X obj 557 270 r tape-\$2-ndur-\$1;
 #X connect 0 0 16 0;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
@@ -89,3 +90,4 @@ it at the point of note off (beat count is the note duration).;
 #X connect 43 0 30 0;
 #X connect 44 0 43 0;
 #X connect 44 1 1 0;
+#X connect 47 0 10 1;
