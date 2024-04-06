@@ -15,3 +15,5 @@ ones with new tapes.
 You can stop a single tape by quickly pressing the note associated with
 that tape. You can stop all tapes by quickly pressing and releasing
 any two notes together (they don't have to be associated with any tapes).
+
+There's [a demo on YOuTube](https://www.youtube.com/watch?v=e4wtMvePMdU).
