@@ -1,7 +1,7 @@
 # Airport pattern
 
 A pattern for the 201 Pocket Piano inspired by Brian Eno's
-["Music for Airports"](https://en.wikipedia.org/wiki/Ambient_1:_Music_for_Airports).
+["Music for Airports"](https://en.wikipedia.org/wiki/Ambient_1:_Music_for_Airports)
 and
 [Pd for Airports](https://www.youtube.com/watch?v=7sTrn39TT7k).
 
