@@ -1,4 +1,4 @@
-#N canvas 58 0 1198 861 10;
+#N canvas 61 -1119 1197 860 10;
 #X obj 420 70 v global-bpm;
 #X obj 420 95 v beat-clock;
 #N canvas 564 108 814 718 run-clocks 0;
@@ -224,11 +224,6 @@ was audible about 50% of the time.;
 #X obj 860 630 s play-seq;
 #X obj 580 772 s play-seq;
 #X obj 860 770 s play-seq;
-#X obj 190 982 s play-seq;
-#X obj 210 955 text define -k double-click-stops-one;
-#A set 0 60 70 700 \; 3000 62 70 120 \; 3000 64 70 120 \;;
-#X msg 190 930 symbol double-click-stops-one;
-#X text 190 900 Play one note and stop it with a double click;
 #X obj 660 57 r test-reset;
 #X obj 580 1062 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
@@ -252,8 +247,6 @@ was audible about 50% of the time.;
 #X connect 6 0 2 0;
 #X connect 8 0 3 0;
 #X restore 580 1093 pd different-single-click;
-#X text 580 1020 Regression: Quick click of different note shouldn't
-stop first. Test runs twice \, error occurred after second run.;
 #X obj 780 830 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 781 855 s test-reset;
@@ -274,6 +267,14 @@ stop first. Test runs twice \, error occurred after second run.;
 #X connect 5 1 3 0;
 #X connect 7 0 5 0;
 #X restore 580 974 pd repeat-evenly;
+#X obj 580 1233 s play-seq;
+#X obj 600 1208 text define -k long-then-slower;
+#A set 0 60 70 1000 \; 1500 60 70 500;
+#X msg 580 1181 symbol long-then-slower;
+#X text 580 1020 Regression: Quick click of different note shouldn't
+stop first. Will run twice \, error occurred after second run.;
+#X text 580 1143 A long note \, then again shorter before it's had
+time to repeat. Only the shorter version should repeat.;
 #X connect 3 0 4 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
@@ -294,13 +295,13 @@ stop first. Test runs twice \, error occurred after second run.;
 #X connect 46 0 45 0;
 #X connect 47 0 46 0;
 #X connect 48 0 46 0;
-#X connect 49 0 83 0;
+#X connect 49 0 78 0;
 #X connect 51 0 52 0;
 #X connect 51 1 44 0;
 #X connect 56 0 67 0;
 #X connect 59 0 61 0;
 #X connect 60 0 59 0;
-#X connect 74 0 72 0;
-#X connect 76 0 51 0;
-#X connect 77 0 78 0;
-#X connect 80 0 81 0;
+#X connect 72 0 51 0;
+#X connect 73 0 74 0;
+#X connect 75 0 76 0;
+#X connect 81 0 79 0;
