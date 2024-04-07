@@ -1,4 +1,5 @@
-#N canvas 61 -1119 1197 860 10;
+#N struct text float x float y text t;
+#N canvas 162 26 1198 861 10;
 #X obj 420 70 v global-bpm;
 #X obj 420 95 v beat-clock;
 #N canvas 564 108 814 718 run-clocks 0;
