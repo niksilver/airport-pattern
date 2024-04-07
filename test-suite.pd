@@ -1,4 +1,4 @@
-#N canvas 215 -999 1194 857 10;
+#N canvas -4 25 1197 860 10;
 #X obj 420 70 v global-bpm;
 #X obj 420 95 v beat-clock;
 #N canvas 564 108 814 718 run-clocks 0;
@@ -151,7 +151,7 @@
 #X obj 600 745 text define -k stop-three-notes;
 #A set 0 60 70 1000 \; 1500 62 70 1000 \; 1500 64 70 1000 \; 1500 60
 70 120 \; 100 62 70 120;
-#X text 620 30 Data in these tests are: wait (ms) \, midi note \, vel
+#X text 620 27 Data in these tests are: wait (ms) \, midi note \, vel
 \, duration;
 #X obj 600 330 text define -k same-two-notes-together;
 #A set 0 60 75 1000 \; 0 60 75 1000 \;;
@@ -161,9 +161,9 @@
 70 120 \; 100 68 70 120;
 #X msg 860 720 symbol any-double-click;
 #X text 860 690 Double quick click anything to stop three notes;
-#X obj 620 60 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 620 57 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X text 649 60 Bang to stop tapes (when testing);
+#X text 749 57 Bang to stop tapes (when testing);
 #X text 827 109 It's ...-1 because we're assuming it's pattern 1;
 #X text 580 547 The quick note should stop the same one;
 #X text 860 548 The quick note should stop only the same one;
@@ -232,6 +232,25 @@ was audible about 50% of the time.;
 #X obj 580 772 s play-seq;
 #X obj 860 770 s play-seq;
 #X obj 580 1040 s play-seq;
+#X obj 190 982 s play-seq;
+#X obj 210 955 text define -k double-click-stops-one;
+#A set 0 60 70 700 \; 3000 62 70 120 \; 3000 64 70 120 \;;
+#X msg 190 930 symbol double-click-stops-one;
+#X text 190 900 Play one note and stop it with a double click;
+#X obj 260 830 s play-seq;
+#X text 190 548 Quick click of different note shouldn't stop first
+;
+#X obj 280 803 text define -k different-single-click;
+#A set 0 60 70 700 \; 2000 62 70 120;
+#X msg 260 778 symbol different-single-click;
+#X obj 660 57 r test-reset;
+#X obj 200 580 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 200 603 t b b b;
+#X obj 143 650 delay 5000;
+#X obj 143 675 t b b;
+#X obj 143 740 delay 500;
+#X obj 171 705 s test-reset;
 #X connect 3 0 4 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
@@ -262,3 +281,13 @@ was audible about 50% of the time.;
 #X connect 62 0 73 0;
 #X connect 65 0 67 0;
 #X connect 66 0 65 0;
+#X connect 81 0 79 0;
+#X connect 86 0 83 0;
+#X connect 87 0 56 0;
+#X connect 88 0 89 0;
+#X connect 89 1 90 0;
+#X connect 89 2 86 0;
+#X connect 90 0 91 0;
+#X connect 91 0 92 0;
+#X connect 91 1 93 0;
+#X connect 92 0 86 0;
