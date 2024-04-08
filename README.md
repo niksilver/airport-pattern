@@ -17,3 +17,11 @@ that tape. You can stop all tapes by quickly pressing and releasing
 any two notes together (they don't have to be associated with any tapes).
 
 There's [a demo on YouTube](https://www.youtube.com/watch?v=e4wtMvePMdU).
+
+## Changelog
+
+Releases to Patch Storage only.
+
+* v1.5 - Initial release.
+* v1.7 - Fix bug in which pattern didn't play nicely with some synths;
+quick click time increased from 150ms to 200ms.
